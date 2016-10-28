@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="CtoFconverter.css">
+</head>
+<body>
+
+<h3><label id="header">Insert a number into one of the input fields below:</label></h3>
+
+<span style="text-shadow: 0 0 10px #a5dcff">Insert a number into one of the input fields below: </span><BR>
+
+<input id="celsius" onkeyup="convert('C')"><label id="celsiusGlow">degrees Celsius</label><BR>
+
+<label id="equalsGlow">Equals</label><BR>
+
+<input id="fahrenheit" onkeyup="convert('F')"><label id="fahrenheitGlow">degrees Fahrenheit</label><BR>
+
+<script>
+    function convert(tempType) {
+        var x;
+        if (tempType == "C") {
+            x = document.getElementById("celsius").value * 9 / 5 + 32;
+            document.getElementById("fahrenheit").value = Math.round(x);
+        }//End if
+        else {
+            x = (document.getElementById("fahrenheit").value -32) * 5 / 9;
+            document.getElementById("celsius").value = Math.round(x);
+        }//End Else
+    }//End convert(tempType)
+</script>
+</body>
+</html>
+
